@@ -396,7 +396,7 @@ async def _execute_and_compare(
     """
     try:
         for call_idx in range(num_calls):
-            io_numpy = {}
+            io_numpy = {"op_name": rt_func.desc.name}
             if call_idx == 0 and dump_optests_enabled():
                 assert dump_path is not None
                 for name, arr in state.items():
